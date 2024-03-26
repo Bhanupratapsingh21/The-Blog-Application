@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { login as authLogin } from '../Store/AuthSlice'
+import { authlogin } from '../Store/AuthSlice'
 import { Button, Input } from './index'
 import { useDispatch } from "react-redux";
 import authService from "../Appwrite/auth";
@@ -30,11 +30,11 @@ function Login() {
             if (session) {
                 const userData = await authService.getCurrentUser()
                 if (userData) {
-                    dispatch(authLogin(userData));
+                    dispatch(authlogin({userData}));
                     toast({
                         position: 'top',
                         title: "Login successfully.",
-                        description: "You can now log in.",
+                        description: "You can now Post Blog's",
                         status: "success",
                         duration: 1000,
                         isClosable: true,

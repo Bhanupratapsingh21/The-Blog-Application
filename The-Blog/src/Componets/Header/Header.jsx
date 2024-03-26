@@ -21,7 +21,9 @@ function Header() {
 
     const handleloginlogout = () => {
         if (authStatus) {
+            
             authService.logout().then(() => {
+                navigate('/login')
                 dispatch(logout())
             })
         } else {

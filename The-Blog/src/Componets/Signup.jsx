@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import authService from "../Appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../Store/AuthSlice";
+import { authlogin } from "../Store/AuthSlice";
 import { Button, Input } from './index'
 import { useDispatch } from "react-redux";
 import { useForm } from 'react-hook-form'
@@ -29,13 +29,13 @@ function Signup() {
             const userData = await authService.createAccount(data)
             if (userData) {
                 const userData = await authService.getCurrentUser()
-                if (userData) dispatch(login(userData))
+                if (userData) dispatch(authlogin({userData}))
 
                 // Show success toast and navigate to home page
                 toast({
                     position: 'top',
                     title: "Account created.",
-                    description: "You can now log in.",
+                    description: "You can now post blogs.",
                     status: "success",
                     duration: 1000,
                     isClosable: true,
