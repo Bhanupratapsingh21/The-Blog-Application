@@ -59,7 +59,7 @@ function Signup() {
     return (
         <div className="loginsignbox2" > 
             <form onSubmit={handleSubmit(create)} className="formlogin">
-            <p className="login">Log in The Blog</p>
+            <p className="login">Sign-up On The Blog</p>
             {error && <p className="text-red-600 mt-2 mr-9">{error}</p>}
             <div className="inputContainer">
                 <Input

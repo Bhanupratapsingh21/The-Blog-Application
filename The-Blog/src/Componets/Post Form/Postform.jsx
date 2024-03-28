@@ -25,7 +25,7 @@ function Postform({ post }) {
                 title : 'Updateing Your Blog',
                 status : "loading",
                 position : "top",
-                duration : 3000,
+                duration : 1000,
                 isClosable : true 
             });
             const file = data.image[0] ? await service.uploadfile(data.image[0]) : null
